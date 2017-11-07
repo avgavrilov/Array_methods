@@ -8,8 +8,9 @@ namespace MinItemArray
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            ///123/123
             Random rand = new Random();
             Console.Write("Введите кол-во элементов - ");
             int num = int.Parse(Console.ReadLine());//кол-во элементов массива
