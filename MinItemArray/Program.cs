@@ -10,15 +10,43 @@ namespace MinItemArray
     {
         public static void Main(string[] args)
         {
-            int[] a = new_Mas();
-            ShowArray(a);
+            int[] a = new int[0];
+            bool exit = false;
+            /*Console.Write("Сгенерировать массив? y/n ");
 
-            //Console.WriteLine("max = {0}", max);
-            //Console.WriteLine("min = {0}", min);
+            if (Console.ReadLine() == "y")
+            {
+                a = new_Mas();
+                ShowArray(a);
+            }*/
 
-            a = del_Item(a);//удаление элемента
-            ShowArray(a);// вывести
-            Console.ReadKey();
+            do
+            {
+                Console.WriteLine("Сгенерировать массив (введите 1)");
+                Console.WriteLine("Удаление элемента (введите 2)");
+                Console.WriteLine("Для выхода (введите 9)");
+                switch (Int32.Parse(Console.ReadLine()))
+                {
+
+                    case 1:
+                        a = new_Mas();
+                        ShowArray(a);
+                        Console.WriteLine();
+                        break;
+
+                    case 2:
+                        a = del_Item(a);//удаление элемента
+                        ShowArray(a);// вывести
+                        Console.WriteLine();
+                        break;
+                    
+                    case 9:
+                        exit = true;
+                        break;
+                }
+            }
+            while (exit == false);
+            //Console.ReadKey();
 
         }
         static void ShowArray(int[] a) // функция вывода массива
@@ -49,7 +77,6 @@ namespace MinItemArray
             }
             return b;
         }
-
         static int[] new_Mas() // создание массива
         {
             Random rand = new Random();
