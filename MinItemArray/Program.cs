@@ -10,30 +10,14 @@ namespace MinItemArray
     {
         public static void Main(string[] args)
         {
-            ///123/123
-            Random rand = new Random();
-            Console.Write("Введите кол-во элементов - ");
-            int num = int.Parse(Console.ReadLine());//кол-во элементов массива
-            int[] a = new int[num];
-            int min = int.MaxValue, max = int.MinValue;
+            int[] a = new_Mas();
+            ShowArray(a);
 
-
-            for (int i = 0; i <= a.Length - 1; i++)
-            {
-                a[i] = rand.Next(1, 100);
-                if (a[i] < min)
-                    min = a[i];
-                if (a[i] > max)
-                    max = a[i];
-                Console.WriteLine("a[{0}] = {1}", i, a[i]);
-            }
-
-
-            Console.WriteLine("max = {0}", max);
-            Console.WriteLine("min = {0}", min);
+            //Console.WriteLine("max = {0}", max);
+            //Console.WriteLine("min = {0}", min);
 
             a = del_Item(a);//удаление элемента
-            ShowArray(a);// вывести массив b
+            ShowArray(a);// вывести
             Console.ReadKey();
 
         }
@@ -66,8 +50,19 @@ namespace MinItemArray
             return b;
         }
 
+        static int[] new_Mas() // создание массива
+        {
+            Random rand = new Random();
+            Console.Write("Введите кол-во элементов - ");
+            int num = int.Parse(Console.ReadLine());//кол-во элементов массива
+            int[] a = new int[num];
 
-
+            for (int i = 0; i <= a.Length - 1; i++)
+            {
+                a[i] = rand.Next(1, 100);
+            }
+            return a;
+        }
     }
 }
 
